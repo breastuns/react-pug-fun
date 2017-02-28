@@ -1,16 +1,31 @@
 import React from 'react';
-import { Component } from 'react';
-import HelloWorld from './HelloWorld';
+import {Component} from 'react';
 import NavBar from './NavBar';
+import ContentContainer from './Content-Container';
 
 export default class App extends Component {
-    render() {
-        return (
-            <div>
-                <NavBar dogs={['pugs', 'bulldogs', 'french bulldogs']}/>
-                <HelloWorld/>
-                <HelloWorld/>
-            </div>
-        );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      home: 'true'
+    };
+  }
+
+  render() {
+    const handleClick = (dogName) => {
+      let newState = {};
+      newState[dogName.toLowerCase()] = true;
+      this.setState(newState);
+    };
+
+    return (
+      <div>
+        <NavBar
+          dogs={['Home', 'Pugs', 'Bulldogs']}
+          handleClick={handleClick}
+        />
+        <ContentContainer />
+      </div>
+    );
+  }
 }
