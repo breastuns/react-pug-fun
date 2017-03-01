@@ -7,14 +7,15 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      home: 'true'
+      navState: 'home'
     };
   }
 
   render() {
     const handleClick = (dogName) => {
       let newState = {};
-      newState[dogName.toLowerCase()] = true;
+      newState.navState = dogName.toLowerCase();
+
       this.setState(newState);
     };
 
@@ -24,7 +25,7 @@ export default class App extends Component {
           dogs={['Home', 'Pugs', 'Bulldogs']}
           handleClick={handleClick}
         />
-        <ContentContainer />
+        <ContentContainer type={this.state.navState}/>
       </div>
     );
   }
