@@ -5,13 +5,14 @@ import css from '../css/NavBar.less';
 export default class NavBar extends React.Component {
   render() {
     return (
-      <div className="navbar">
+      <ul>
+        <img className="navbar-logo" src="../assets/doge-logo.jpg"/>
         {this.props.dogs.map((dog) =>
-          <div key={dog}>
+          <div key={dog} className="nav-space">
             <NavBarItem name={dog} handleClick={this.props.handleClick}/>
           </div>
         )}
-      </div>
+      </ul>
     );
   }
 }

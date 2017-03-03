@@ -5,9 +5,9 @@ export default class NavBarItem extends Component {
   render() {
     const { handleClick } = this.props;
     return (
-      <div>
-        <div className="navbar-link" onClick={() => {handleClick(this.props.name)}} href={this.props.link}>{this.props.name}</div>
-      </div>
+      <li>
+        <a className="navbar-link" onClick={() => {handleClick(this.props.name)}} href={this.props.link}>{this.props.name}</a>
+      </li>
     );
   }
 }

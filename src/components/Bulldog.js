@@ -6,7 +6,7 @@ export default class Bulldog extends Component {
     return (
       <div className="bulldog-content">
         <h1>BULLDOGS</h1>
-      <img src="../assets/bulldog-jetski.gif"/>
+        <img src="../assets/bulldog-jetski.gif"/>
       </div>
     );
   }
